@@ -1,0 +1,48 @@
+﻿@model ShopCoinUSAv2.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "SuaTK";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+@using (Html.BeginForm())
+{
+<h2>Sua Tai Khoan</h2>
+@Html.ValidationSummary(true)
+
+<fieldset>
+    <legend></legend>
+
+    <div class="editor-field">
+        <table>
+            <tr>
+                <td>
+                    <b>Tên</b>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+                </td>
+                <td>
+                    <b>Tên đăng nhâp :  </b>
+                </td>
+                <td>
+                    @Model.TenDN
+                </td>
+            </tr>
+            <tr>
+                <td style="width:125px"><b>Mật khẩu </b></td>
+                <td>
+                    @Html.TextBoxFor(model => model.MatKhau, new { @class = "form-control" })
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+    </table>
+</div>
+<p>
+    <input type="submit" value="Lưu cập nhật" class="btn btn-success" />
+</p>
+</fieldset>
+<div>
+    @Html.ActionLink("Trở lại", "DSTaiKhoan", "TaiKhoan")
+</div>
+
+}

@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+<link href="~/Content/Login.css" rel="stylesheet" />
+}
+@ViewBag.ThongBao
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<div class="auth-layout bg-gray-100">
+    <div class="container mx-auto my-10 sm:my-0">
+        <div class="flex flex-row content-center items-center justify-center">
+            <div class="w-full lg:w-1/3 md:px-4 my-10">
+                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 md:rounded-lg bg-white border">
+                    <div class="flex-auto px-4 lg:px-10 py-10">
+                        <div class="mb-3 text-center">
+                            <h6 class="font-bold uppercase">
+                                Log in to your account
+                            </h6>
+                        </div> 
+                            <form>
+                                <div class="relative w-full mb-3">
+                                    
+                                        <label class="block text-gray-700 text-xs mb-2"> Email </label>
+                                        @Html.TextBox("TenDN", null, new { @class = "px-2 py-1 text-gray-700 focus:outline-none focus:shadow-none w-full ease-linear transition-all duration-150 border-current border-solid border border-gray-400", @id = "input" })
+                                       @ViewData["loi12"]
+                                        @*<input type="email" value="" class="px-2 py-1 text-gray-700 focus:outline-none focus:shadow-none w-full ease-linear transition-all duration-150 border-current border-solid border border-gray-400">*@
+
+                                     
+                                    
+                                </div>
+                                <div class="relative w-full mb-3">
+                                   
+                                        <label class="block text-gray-700 text-xs mb-2">Password</label>
+                                        <div class="relative">
+                                            @Html.Password("MatKhau", null, new { @class = "px-2 py-1 text-gray-700 focus:outline-none focus:shadow-none w-full ease-linear transition-all duration-150 border-current border-solid border border-gray-400" })
+                                            @ViewData["loi1"]
+                                            @ViewData["loi2"]
+                                            
+
+                                            @*<input type="password" value="" class="px-2 py-1 text-gray-700 focus:outline-none focus:shadow-none w-full ease-linear transition-all duration-150 border-current border-solid border border-gray-400">*@
+                                            <span class="panel-icon absolute right-2 top-2">
+                                            <span role="img" class="mdi mdi-eye-off"><svg fill="currentColor" width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+                                                </span>
+                                            </span>
+                                        </div> <span class="text-red-500 text-xs"></span>
+                                    
+                                </div>
+                                <div data-sitekey="6LeBqaIdAAAAAPwhTQrSRgHAl8Y7sMyWCv-IYSFA" data-size="normal" data-theme="light" data-badge="bottomright" data-tabindex="0" data-callback="recaptchaSuccessCallback" data-expired-callback="recaptchaExpiredCallback" data-error-callback="recaptchaErrorCallback" class="g-recaptcha">
+                                <div style="width: 304px; height: 78px;">
+                                    <div>
+                                    <iframe title="reCAPTCHA" src="https://www.recaptcha.net/recaptcha/api2/anchor?ar=1&amp;k=6LeBqaIdAAAAAPwhTQrSRgHAl8Y7sMyWCv-IYSFA&amp;co=aHR0cHM6Ly9teS5zaG9wY29pbnVzYS5jb206NDQz&amp;hl=vi&amp;v=4rwLQsl5N_ccppoTAwwwMrEN&amp;theme=light&amp;size=normal&amp;badge=bottomright&amp;cb=o1bsvmfvk9hd" width="304" height="78" role="presentation" name="a-kt94y0jk8ukm" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                                        </div>
+                                    <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                    </div>
+                                <iframe style="display: none;"></iframe>
+                                </div> 
+                                <div class="text-center mt-6">
+                                    <button type="submit" class="bg-yellow-500 text-white text-sm px-6 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150 disabled:opacity-50">             
+                                        Login
+                                    </button>
+                                </div>
+                            </form>
+                       <div class="mt-6 relative text-center text-blue-500">
+                            <a href="/forgot-pass" class="underline">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+                </div> <div class="mt-6 relative text-center">
+                    Don't have an account?
+                    <a href="/ShopCoin/Register/" class="text-blue-500">
+                        Register
+                    </a>
+                </div> 
+                <div class="w-full px-4 mt-4">
+                <ul class="flex list-none justify-between">
+                    <li><a href="#" class="text-blueGray-600 hover:text-blueGray-800 text-sm mr-2"> Privacy Notice </a>
+                        </li> 
+                    <li>
+                        <a href="#" class="text-blueGray-600 hover:text-blueGray-800 text-sm mr-2"> Cookies Notice </a>
+                        </li> 
+                    <li>
+                    <a href="#" class="text-blueGray-600 hover:text-blueGray-800 text-sm"> Cookies Settings </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer class="block py-4 bg-gray-100">
+        <div class="container mx-auto">
+            <div class="hidden md:flex flex-wrap my-10">
+            <div class="w-1/4">
+                <span class="text-gray-700 block mb-4 font-bold">Products</span> 
+                <ul>
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Blockchain Explorer</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Crypto API</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Crypto Indices</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Interest</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#">Jobs Board</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" rel="noopener" href="#" class="cmc-link">Sitemap</a></li>
+                    </ul>
+                </div> 
+            <div class="w-1/4">
+                <span class="text-gray-700 block mb-4 font-bold">Company</span> 
+                <ul>
+                <li class="mb-2 text-gray-500"><a target="_blank" href="" class="cmc-link">About us</a></li>
+                <li class="mb-2 text-gray-500"><a target="_blank" href="" class="cmc-link">Terms of use</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="" class="cmc-link">Privacy Policy</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="/" class="cmc-link">Disclaimer</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="" class="cmc-link">Methodology</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="" rel="noopener">Careers</a><span class="tips">We’re hiring!</span>
+                </li>
+                </ul>
+             </div>
+            <div class="w-1/4">
+                <span class="text-gray-700 block mb-4 font-bold">Support</span> 
+                <ul>
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Request Form</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#">Contact Support</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" class="cmc-link">FAQ</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Glossary</a></li>
+                </ul>
+                </div>
+            <div class="w-1/4"><span class="text-gray-700 block mb-4 font-bold">Socials</span> 
+                <ul>
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Facebook</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Twitter</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Telegram</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Instagram</a></li> 
+                <li class="mb-2 text-gray-500"><a target="_blank" href="#" rel="noopener">Interactive Chat</a></li>
+                 </ul>
+                </div>
+                </div>
+            <hr class="mb-4 border-b-1 border-gray-200">
+            <div class="text-sm text-gray-500 font-semibold py-1 text-center">
+                Copyright © 2022
+                <a href="#" class="text-gray-700 text-sm font-semibold py-1"> Shopcoin.com </a>
+            </div>
+        </div>
+    </footer>
+}
+
